@@ -32,7 +32,7 @@ const Layout = () => {
         else if (gameState.current === 2){
             console.log("in state 2")
             //setTerminalMessage(`Congrates. It looks like you rolled a ${rollValue}`)
-            terminalRef.current.updateText(`Congrations. It looks like you generated a ${response.diceRoll}. If you like, you can keep generating numbers.`)
+            terminalRef.current.updateText(`Congratulations. It looks like you generated a ${response.diceRoll}. If you like, you can keep generating numbers.`)
             gameState.current++
         }
         else if (gameState.current === 3){
@@ -91,7 +91,7 @@ const Layout = () => {
                 <Grid xs={3}  item>
                     <Item>
                     <Box sx={{height: 100}}>
-                        <Typography>Opponents Cards</Typography>
+                        <Typography>Your Cards</Typography>
                         <Button onClick={newGame}>Start Over</Button>
                     </Box>
                     </Item>
