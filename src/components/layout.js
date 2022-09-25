@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 
 const Layout = () => {
-    const [terminalMessage, setTerminalMessage] = useState("Hello, world.")
+
     const [messageDone, setMessageDone] = useState(false)
     const [rollValue, setRollValue] = useState(0)
     const gameState = useRef(1)
@@ -50,7 +50,7 @@ const Layout = () => {
 
     useEffect(() => {
         advanceGame({})
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (
@@ -80,7 +80,7 @@ const Layout = () => {
                 </Grid>
                 <Grid xs={4}  item>
                     <Item>
-                        <Terminal ref={terminalRef}  msg={terminalMessage} onDone={setMessageDone} />
+                        <Terminal ref={terminalRef}  msg={""} onDone={setMessageDone} />
                     </Item>
                 </Grid>
                 <Grid xs={2}  item>

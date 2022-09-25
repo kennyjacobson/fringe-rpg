@@ -1,6 +1,6 @@
 
-import React, { useEffect, useState, forwardRef, useImperativeHandle, useRef } from "react"
-import {  Paper, Box, Button } from "@mui/material"
+import React, { useEffect, useState, forwardRef, useImperativeHandle } from "react"
+import {  Paper, Box } from "@mui/material"
 
 import { styled } from '@mui/material/styles'
 
@@ -67,7 +67,7 @@ const Terminal = forwardRef(({msg, onDone}, ref) => {
     useEffect(() => {
         
         textTyper(msg)
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>

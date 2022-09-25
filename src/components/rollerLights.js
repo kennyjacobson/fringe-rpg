@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, {  useState } from "react"
 import { Stack, Box, Paper, Typography, Button } from "@mui/material"
 import { styled } from '@mui/material/styles'
 
@@ -87,13 +87,7 @@ const RollerLights = ({min, max, number, onDone, callback}) => {
 
 
 
-    useEffect(() => {
-        // const min = 5
-        // const max = 10
-        // const diceNumber = 6
-        //roll(min,max,number)
-        //startRolling(diceNumber)
-    }, [])
+
 
 
     return (
