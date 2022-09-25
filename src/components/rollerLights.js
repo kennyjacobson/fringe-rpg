@@ -12,18 +12,20 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-const RollerLights = ({min, max, number}) => {
+const RollerLights = ({min, max, number, onDone, callback}) => {
     const [count, setCount] = useState(1)
     const [barColor, setBarColor] = useState([BAR_ON, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF])
     //const [randomNumber, setRandomNumber] = useState(6)
 
     const rollDice = () => {
-        const rando = Math.floor(Math.random() * max) + 1
+        const range = max - min + 1
+        const rando = Math.floor(Math.random() * range) + min 
         roll(min,max,rando)
         console.log("here.")
     }
 
     const roll = (min, max, number) => {
+        onDone(0)
         let timesRun = 0
         let goingUp = true
         //let isDone = false
@@ -67,9 +69,11 @@ const RollerLights = ({min, max, number}) => {
             } else if (stage === 2) {
                 /* final roll*/
                 timesRun++
-                if(timesRun >= number)(
+                if(timesRun >= number){
+                    callback({diceRoll : number})
+                    onDone(number)
                     clearInterval(interval)
-                )
+                }
                 newBarColor[timesRun-1] = BAR_ON
                 setBarColor([...newBarColor])
                 setCount(timesRun)
@@ -108,7 +112,7 @@ const RollerLights = ({min, max, number}) => {
             </Stack>
         </Box>
 
-        <Button sx={{mt:2, color:"green", borderColor:"green"}} variant="outlined" onClick={rollDice}>Random</Button>
+        <Button sx={{mt:2, color:"green", borderColor:"green"}} variant="outlined" onClick={rollDice}>Generate</Button>
         </>
     )
 }
