@@ -14,7 +14,7 @@ const Screen = styled(Paper)(({ theme }) => ({
     overflow: "hidden",
     verticalAlign: "bottom",
     fontSize: 35,
-    fontFamily : '"Black Ops One", Open Sans',
+    fontFamily : '"VT323", Open Sans',
     animation : "caret 1s steps(1) infinite",
     "@keyframes caret":{
         "50%": {
@@ -70,7 +70,7 @@ const Terminal = forwardRef(({msg, onDone}, ref) => {
         <>
             <Screen sx={{height: 498}}>
             <Box >
-                  <Typography sx={{fontSize: 30, fontFamily: ['"TheFringe", Open Sans',]}}>{screenMsg}<Blinky></Blinky></Typography>   
+                  <Typography sx={{fontSize: 25, fontFamily: ['"TheFringe", Open Sans',]}}>{screenMsg}<Blinky></Blinky></Typography>   
                 </Box>
                 <Box sx={{mt:4, }}>
                     {screenMsg}<Blinky></Blinky>

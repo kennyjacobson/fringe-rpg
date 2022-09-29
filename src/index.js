@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "typeface-monoton"
 import "typeface-black-ops-one"
+import "typeface-vt323"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
