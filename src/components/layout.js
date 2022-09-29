@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import {  Grid, Paper, Typography, Box, Button } from "@mui/material"
 import Roller from "./roller"
 import Terminal from "./terminal"
+import FringeCard from "./fringeCard";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#1A2027',
@@ -25,20 +26,17 @@ const Layout = () => {
         console.log(gameState.current)
         if (gameState.current === 1){
             console.log("in state 1")
-            //setTerminalMessage("Welcome to this game. How about you roll the dice")
             terminalRef.current.updateText("Welcome to this game. How about you generate a drop number?")
             gameState.current++
         }
         else if (gameState.current === 2){
             console.log("in state 2")
-            //setTerminalMessage(`Congrates. It looks like you rolled a ${rollValue}`)
             terminalRef.current.updateText(`Congratulations. It looks like you generated a ${response.diceRoll}. If you like, you can keep generating numbers.`)
             gameState.current++
         }
         else if (gameState.current === 3){
             console.log("in state 3")
             terminalRef.current.updateText(`This time you generated a ${response.diceRoll}.`)
-            //gameState.current++
         }
 
     }
@@ -50,7 +48,7 @@ const Layout = () => {
 
     useEffect(() => {
         advanceGame({})
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    }, []) 
 
 
     return (
@@ -94,6 +92,7 @@ const Layout = () => {
                         <Typography>Your Cards</Typography>
                         <Button onClick={newGame}>Start Over</Button>
                     </Box>
+                    <FringeCard />
                     </Item>
                 </Grid>
             </Grid>

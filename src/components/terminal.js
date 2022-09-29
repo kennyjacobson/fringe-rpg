@@ -1,6 +1,6 @@
 
-import React, { useEffect, useState, forwardRef, useImperativeHandle } from "react"
-import {  Paper, Box } from "@mui/material"
+import React, {  useState, forwardRef, useImperativeHandle } from "react"
+import {  Paper, Box, Typography } from "@mui/material"
 
 import { styled } from '@mui/material/styles'
 
@@ -13,6 +13,8 @@ const Screen = styled(Paper)(({ theme }) => ({
     color: "green",
     overflow: "hidden",
     verticalAlign: "bottom",
+    fontSize: 35,
+    fontFamily : '"Black Ops One", Open Sans',
     animation : "caret 1s steps(1) infinite",
     "@keyframes caret":{
         "50%": {
@@ -64,17 +66,16 @@ const Terminal = forwardRef(({msg, onDone}, ref) => {
     }
 
 
-    useEffect(() => {
-        
-        textTyper(msg)
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
-
     return (
         <>
             <Screen sx={{height: 498}}>
-                <Box>
+            <Box >
+                  <Typography sx={{fontSize: 30, fontFamily: ['"TheFringe", Open Sans',]}}>{screenMsg}<Blinky></Blinky></Typography>   
+                </Box>
+                <Box sx={{mt:4, }}>
                     {screenMsg}<Blinky></Blinky>
                 </Box>
+                
             </Screen>
             <Box sx={{height: 100}}>
                 
