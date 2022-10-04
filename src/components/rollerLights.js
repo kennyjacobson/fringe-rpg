@@ -12,7 +12,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-const RollerLights = ({min, max, number, onDone, callback}) => {
+const RollerLights = ({min, max, number, onDone, callback, disabled}) => {
     const [count, setCount] = useState(1)
     const [barColor, setBarColor] = useState([BAR_ON, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF, BAR_OFF])
     //const [randomNumber, setRandomNumber] = useState(6)
@@ -106,7 +106,7 @@ const RollerLights = ({min, max, number, onDone, callback}) => {
             </Stack>
         </Box>
 
-        <Button sx={{mt:2, color:"green", borderColor:"green"}} variant="outlined" onClick={rollDice}>Generate</Button>
+        <Button disabled={disabled} sx={{mt:2, color:"green", borderColor:"green"}} variant="outlined" onClick={rollDice}>Generate</Button>
         </>
     )
 }

@@ -4,7 +4,7 @@ import { Typography,  Card, CardActionArea, CardMedia, CardContent, Grid } from 
 const FringeCard = ({onDone, callback}) => {
     return (
         <>
-            <Card sx={{ml:8, mr:8, textAlign : "left"}}>
+            <Card sx={{ml:1, mr:1, mt:2, textAlign : "left"}}>
                 <CardActionArea>
                     <CardMedia
                     component="img"

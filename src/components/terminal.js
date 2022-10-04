@@ -77,9 +77,7 @@ const Terminal = forwardRef(({msg, onDone}, ref) => {
                 </Box>
                 
             </Screen>
-            <Box sx={{height: 100}}>
-                
-            </Box>
+           
         </>
     )
 })
